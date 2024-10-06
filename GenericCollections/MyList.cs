@@ -10,7 +10,22 @@ namespace GenericCollections
     {
         // List koleksiyon tipi IList arayüzünü implemente eder, dolayası ile Crud işlemleri ile birlikte İndexleme de vardır.
 
-        List<string> 
+        List<string> myList = new List<string>() { "Enes", "Mehmet", "Yıldırım" };
+        //IList<string> myList = new List<string>() { "Enes", "Mehmet", "Yıldırım" }; //Buradaki gibi List sınıfının implemente ettiği üst arayüzlerin tipini de alabilir.
+        public void Start()
+        {
+            IList<string> ilist = myList;
+            ilist.Add("EMY");
+
+            IEnumerable<string> enumerable = myList;
+            IReadOnlyList<string> readOnlyList = myList;
+
+            ilist.RemoveAt(0); //Listeler bir referans tutucudurlar, burada ilist'den 0.item'i silersek referansını verdiği readonlyList'den de silinir
+            foreach (var item in readOnlyList)
+            {
+                Console.WriteLine(item);
+            }
+        }
 
     }
 }
