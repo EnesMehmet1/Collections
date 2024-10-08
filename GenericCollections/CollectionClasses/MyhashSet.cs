@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GenericCollections
+namespace GenericCollections.CollectionClasses
 {
-    public class MyConcurrentCollections
+    public class MyhashSet
     {
     }
 }

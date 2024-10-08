@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GenericCollections.CollectionInterfaces;
 
-namespace GenericCollections
+namespace GenericCollections.CollectionClasses
 {
-    public class MyList
+    public class MyList : IGenericCollections
     {
         // List koleksiyon tipi IList arayüzünü implemente eder, dolayası ile Crud işlemleri ile birlikte İndexleme de vardır.
 
         List<string> myList = new List<string>() { "Enes", "Mehmet", "Yıldırım" };
         //IList<string> myList = new List<string>() { "Enes", "Mehmet", "Yıldırım" }; //Buradaki gibi List sınıfının implemente ettiği üst arayüzlerin tipini de alabilir.
-        public void Start()
+        public void GetCollection()
         {
             IList<string> ilist = myList;
             ilist.Add("EMY");
@@ -26,6 +27,5 @@ namespace GenericCollections
                 Console.WriteLine(item);
             }
         }
-
     }
 }
